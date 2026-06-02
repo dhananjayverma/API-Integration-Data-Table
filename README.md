@@ -34,6 +34,10 @@ Run the production server:
 npm run start
 ```
 
+
+
+# deploy link - <a href="https://luminous-dragon-6de66d.netlify.app/">click here</a>
+
 ## Features Implemented
 
 - Fetches user data from `https://jsonplaceholder.typicode.com/users` using the Fetch API.
