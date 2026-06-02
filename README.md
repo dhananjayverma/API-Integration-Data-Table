@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# User Insights Table
 
-## Getting Started
+A responsive Next.js app that fetches users from the JSONPlaceholder public API and displays them in an interactive table.
 
-First, run the development server:
+## Project Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in the browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For a production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Features Implemented
 
-To learn more about Next.js, take a look at the following resources:
+- Fetches data from `https://jsonplaceholder.typicode.com/users` using the Fetch API.
+- Displays user data in a table with the required columns: Name, Email, Company Name, and City.
+- Search by user name or email.
+- Sort by name in A-Z and Z-A order.
+- Filter users by city.
+- Loading skeletons while data is being fetched.
+- Error state with retry support.
+- Empty state when no users match the active filters.
+- Responsive layout with horizontal table scrolling on smaller screens.
+- Polished gradient UI, animated sections, animated rows, and hover states.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Assumptions and Decisions
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The app uses Next.js with the App Router and a client component for interactive table state.
+- City options are generated from the API response, so the filter stays accurate if the API data changes.
+- Sorting defaults to A-Z because it is the most common directory/table behavior.
+- No extra UI libraries were added, keeping the project lightweight and easy to run.
